@@ -1,0 +1,195 @@
+CLASE 1
+    MIA
+        node js nace en 2009 con mejoras como npm como gestor de paquetes
+        Gestores de dependencias
+            organiza, administra diferentes herramientas a lo largo de nuestros recursos para poder utilizarlos dentro de nuestros proyectos, creados por la misma comunidad 
+            tendremos paquetes y modulos por node o por arquitecturas web
+            npm
+                Es el manejador de node para los paquetes, asi trabajar de forma correcta(Node Package Manager);
+            Se maneja por Repositorios Online de todos los paquetes que podemos utilizar hasta publicar nuestras aportaciones 
+            Tambien se tiene un CLI
+                manera de trabajar correctamente por medio de comandos en la terminal (Command Line Client)
+    PLATZI
+        Historia
+        1995 Nacimiento de JS --> Uno de los lenguajes mas populares con miles de aplicaciones y grandes empresas apostando por este recurso
+        2009 Nace Node.js --> Un entorno en tiempo de ejecucion multiplataforma.
+        2009 NPM (Node Package Manager) --> Gestor de paquetes por defecto para Node.js
+        ¿Qué son los gestores de dependencias?
+        Organizan, administran y tienen una serie de herramientas las cuales podemos aprovehar en nuestros proyectos y ser mucho mas agiles en la creación de nuestras aplicaciones.
+        Paquetes y modulos
+        Van a ser instalados y utlizados segun sea el caso. Podemos tener paquetes que funcionan solamente de lado de node asi como tambien de lado de la arquitectura web.
+        Herramientas que tenemos al instalar Node.js
+        Repositorio onlines --> Podemos publicar paquetes que sean mejoras y/o ayudas para la construccion de aplicaciones.
+        Command Line Client (CLI) --> Cliente que nos ayuda a trabajar de manera correcta con comandos
+
+CLASE 2
+    PLATZI
+        “name”: “npm-init” —> Podemos ponerle un nombre sin embargo toma por defecto el de la carpeta.
+
+        “version”: “1.0.0” —> Podemos cambiar segun el caso, dependiendo un cambio mayor o uno menor
+
+        “description”:"" —> Podemos hacer una breve descripcion del proyecto.
+
+        “entry point”: “(index.js)” —> Punto de entrada del proyecto.
+
+        “test command”: —> Podemos incluir los comandos para validar nuestro codigo.
+
+        “git repository”: —> Podemos incluir el repositorio para mantenerlo en la nube
+
+        “keywords”: [“javascript”, “angular”, “node”] —> Que va a utilizar nuestro proyecto.
+
+        “author”: "Alexa Pulido<pulidoaleXXXXXXX> —> Persona que crea el proyecto
+
+        “license”: “MIT” —> Licencias, la mas utilizada es MIT, permite distribuir nuestro codigo.
+
+CLASE 3 
+    PLATZI
+        Dependencias
+
+        npm install moment
+
+        npm install eslint --save-dev —> dependencia que solo va a ser utilizada en el entorno de desarollo
+
+        npm install react --save —> dependencia para ser llevada a produccion.
+
+        Paquetes Globales
+
+        npm install -g
+        Ver lista de los paquetes
+
+        npm list
+        Ver lista de paquetes globlales
+
+        npm list -g
+
+CLASE 4
+    PLATZI
+        npm install package-name -o → Instalar una dependencia opcional
+        
+        Se pueden generar conflictos cuando se tienen paquetes que usan la misma dependencia pero en versiones diferentes. Para evitar esto se puede simular una instalación con npm install package-name —dry-run. Con esto se simula la instalación pero sin agregar ningún paquete, si no hay ningún conflicto se procede a instalar de la manera convencional.
+        
+        npm install package-name@0.15.0 → Instalar la versión especifica de un paquete. Si luego se quiere instalar la versión más reciente se usa npm install package-name@latest.
+        
+        npm install → Instala las dependencias que estén dentro de un package.json.
+
+CLASE 5
+    PLATZI
+        Comandos en NPM (Scripts)
+        En Node, existen comando por defecto como lo son npm start, npm build. Pero también podremos crear comandos personalizados.
+        Comandos personalizados
+        Para crear comandos personalizados, haremos uso de nuestra sección de “scripts” agregando los comandos que necesites, creando como alias. Por ejemplo:
+
+CLASE 6
+    PLATZI
+        npm install ----> se usa cuando descargamos o clonamos un proyecto de un repositorio y necesitamos que nos instale todas las dependencias necesarias.
+
+        npm outdate -----> Muestra los cambios.
+
+        npm install name_package@latest --> actualiza la dependencia a la version mas reciente.
+
+CLASE 7
+    PLATZI
+        Me ha gustado mucho la clase, en especial porque he visto comandos que me topo en mi día a día desarrollando. Les dejo mis apuntes de los principales comandos de la clase:
+        npm audit --> Audita las dependencias que tenemos instaladas en busca de vulnerabilidades.
+        npm audit fix --> Audita e intenta arreglar las vulnerabilidades de nuestras dependencias.
+        npm audit --json --> Muestra los resultados de la auditoría a manera más profunda en formato json.
+        npm audit fix --force --> Corrige los problemas encontrados en las librerías instalando otras dependencias por debajo si es necesario.
+
+CLASE 8
+    PLATZI
+        npm unistall webpack-dev-server
+        Otra forma es ir al archivo package.json y eliminar del listado de dependencia, dependencias de desarrollo o dependencias opcionales; una vez eliminado de la lista ejecutamos
+
+        rm -rf node_modules/
+        npm install
+        Para compilar el proyecto usamos
+
+        npm run build
+        Para compilar el proyecto y obtener mas informacion usamos
+
+
+        npm run build --dd
+        Para ver librerias deprecadas
+
+        npm ci
+
+CLASE 9
+    PLATZI
+        Mis apuntes 🤓
+
+        . Crear un repositorio
+
+        Verificar que el nombre del repositorio sea igual al nombre que tendrá en npm
+        Verificar que el nombre no esta en npm (https://www.npmjs.com/) y que no hayan dependencias que hagan lo mismo que nosotros estamos a punto de publicar.
+        Clonar el repositorio en mi local
+        En el proyecto crearemos un archivo index.js (dentro de src) que tendrá la lógica del proyecto.
+
+        const messages = [
+        "This is where it all begins...",
+        "Commit committed",
+        "Version control is awful",
+        "COMMIT ALL THE FILES!",
+        "The same thing we do every night, Pinky - try to take over the world!",
+        "Lock S-foils in attack position",
+        "This commit is a lie",
+        "I'll explain when you're older!",
+        "Here be Dragons",
+        "Reinventing the wheel. Again.",
+        "This is not the commit message you are looking for",
+        "Batman! (this commit has no parents)",
+        ];
+
+        const funnyCommit = () => {
+        const message = messages[Math.floor(Math.random() * messages.length)];
+        console.log(`\x1b[34m${message}\x1b[89m`);
+        }
+
+        module.exports = {
+        funnyCommit
+        };
+        Se crea una carpeta bin y dentro de ella el archivo global.js
+
+        #!/usr/bin/env node
+        let random = require('../src/index.js');
+
+        random.funnyCommit();
+        Dentro del archivo package.json añadir
+
+        "homepage": "https://github.com/gndx/random-str-msg#readme",
+        "bin": {
+            "random-str-msg": "./bin/global.js"
+        },
+        "preferGlobal": true,
+        "dependencies": {
+            "g": "^2.0.1"
+        }
+
+CLASE 10
+    PLATZI
+        Crea un enlace simbólico, para reconocer a este paquete dentro del listado de paquetes de npm, sin publicarlo todavía pero si verificar que cumple todo lo requerido:
+
+        npm link
+        Para probarlo se deben seguir los siguientes pasos
+    
+        pwd para saber exactamente donde se encuentra la ruta de nuestra dependencia.
+
+        npm install g ruta-de-la-dependencia(pwd) Simulará la instalación de la dependencia en nuestro local
+
+        Luego ya podemos correr nuestro programa en consola:
+
+        random-str-msg
+        Ya verificado seguir con la creación de la cuenta y :
+
+        Vamos a la terminal
+
+        npm adduser
+        Añadimos los datos que nos pide la consola …
+
+        Y se publica el paquete 🙌🏻
+
+        npm publish
+        Se busca en npm la dependencia y se verifica que este subida !
+
+CLASE 11
+    PLATZI
+    
